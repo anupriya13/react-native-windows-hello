@@ -37,6 +37,11 @@
     "react-native": ">=0.65.0",
     "react-native-windows": ">=0.65.0"
   },
+  "codegenConfig": {
+    "name": "ReactNativeWindowsHelloSpec",
+    "type": "modules",
+    "jsSrcsDir": "./codegenSpecs"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.2",
     "@babel/preset-env": "^7.16.11",
