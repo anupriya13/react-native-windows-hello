@@ -40,7 +40,12 @@
   "codegenConfig": {
     "name": "ReactNativeWindowsHelloSpec",
     "type": "modules",
-    "jsSrcsDir": "./codegenSpecs"
+    "jsSrcsDir": "./codegenSpecs",
+    "windows": {
+      "namespace": "ReactNativeWindowsHelloCodegen",
+      "outputDirectory": "windows/ReactNativeWindowsHello/codegen",
+      "separateDataTypes": true
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
@@ -55,5 +60,12 @@
     "react": "^17.0.2",
     "react-native": "0.76",
     "react-native-windows": "0.76"
+  },
+  "react-native-windows": {
+    "init-windows": {
+      "name": "ReactNativeWindowsHello",
+      "namespace": "ReactNativeWindowsHello",
+      "template": "cpp-lib"
+    }
   }
 }

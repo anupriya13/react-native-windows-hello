@@ -8,12 +8,13 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "windows": "react-native run-windows"
+    "windows": "npx @react-native-community/cli run-windows",
+    "test:windows": "jest --config jest.config.windows.js"
   },
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.76",
-    "react-native-windows": "0.76",
+    "react-native-windows": "0.76.13",
     "react-native-windows-hello": "^1.1.0"
   },
   "devDependencies": {
@@ -26,9 +27,17 @@
     "metro-react-native-babel-preset": "^0.66.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "17.0.2",
+    "@rnx-kit/jest-preset": "^0.1.17"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "react-native-windows": {
+    "init-windows": {
+      "name": "ReactNativeWindowsHelloExample",
+      "namespace": "ReactNativeWindowsHelloExample",
+      "template": "cpp-app"
+    }
   }
 }
