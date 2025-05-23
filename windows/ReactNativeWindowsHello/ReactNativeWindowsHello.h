@@ -3,10 +3,10 @@
 #include "pch.h"
 #include "resource.h"
 
-#if __has_include("codegen/NativeReactNativeWindowsHelloDataTypes.g.h")
-  #include "codegen/NativeReactNativeWindowsHelloDataTypes.g.h"
+#if __has_include("codegen/NativeWindowsHelloDataTypes.g.h")
+  #include "codegen/NativeWindowsHelloDataTypes.g.h"
 #endif
-#include "codegen/NativeReactNativeWindowsHelloSpec.g.h"
+#include "codegen/NativeWindowsHelloSpec.g.h"
 
 #include "NativeModules.h"
 
@@ -16,13 +16,16 @@ namespace winrt::ReactNativeWindowsHello
 REACT_MODULE(ReactNativeWindowsHello)
 struct ReactNativeWindowsHello
 {
-  using ModuleSpec = ReactNativeWindowsHelloCodegen::ReactNativeWindowsHelloSpec;
+  using ModuleSpec = ReactNativeWindowsHelloCodegen::WindowsHelloSpec;
 
   REACT_INIT(Initialize)
   void Initialize(React::ReactContext const &reactContext) noexcept;
 
-  REACT_SYNC_METHOD(multiply)
-  double multiply(double a, double b) noexcept;
+  REACT_METHOD(getDeviceStatus) 
+  void getDeviceStatus(::React::ReactPromise<ReactNativeWindowsHelloCodegen::WindowsHelloSpec_availabilityStatus> &&result) noexcept;
+
+  REACT_METHOD(requestConsentVerification) 
+  void requestConsentVerification(std::string promptMessage, ::React::ReactPromise<ReactNativeWindowsHelloCodegen::WindowsHelloSpec_verificationResult> &&result) noexcept;
 
 private:
   React::ReactContext m_context;
