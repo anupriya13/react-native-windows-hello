@@ -1,4 +1,4 @@
-import { NativeModules } from "react-native";
+import ReactNativeWindowsHello from '../codegenSpecs/NativeWindowsHello';
 import {
   getEnumByNativeValue,
   userConsentVerificationResult,
@@ -9,7 +9,7 @@ export class SignInModule {
   static requestConsentVerification(promptMessage = "") {
     return new Promise((resolve, reject) => {
       if (typeof promptMessage === "string") {
-        NativeModules.SignIn.requestScanPromise(promptMessage)
+        ReactNativeWindowsHello.requestConsentVerification(promptMessage)
           .then((result) => {
             const resultObject = getEnumByNativeValue(
               userConsentVerificationResult,
@@ -29,7 +29,7 @@ export class SignInModule {
 
   static getDeviceStatus() {
     return new Promise((resolve, reject) => {
-      NativeModules.SignIn.checkAvailabilityPromise()
+      ReactNativeWindowsHello.getDeviceStatus()
         .then((result) => {
           const resultObject = getEnumByNativeValue(
             userConsentVerifierAvailability,
