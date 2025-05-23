@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup>
-    <ProjectGuid>{fadc39ba-f55c-47d2-8515-cfa6f3b1cf61}</ProjectGuid>
+    <ProjectGuid>{c8b9f59a-58d0-487f-a562-b0c8b1e41846}</ProjectGuid>
     <DefaultLanguage>en-US</DefaultLanguage>
     <EntryPointProjectUniqueName>..\example\example.vcxproj</EntryPointProjectUniqueName>
     <DebuggerType>NativeOnly</DebuggerType>

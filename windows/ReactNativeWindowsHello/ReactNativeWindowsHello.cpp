@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "ReactNativeWindowsHello.h"
 
-#include <winrt/Microsoft.ReactNative.h>
 #include <winrt/Windows.Security.Credentials.UI.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/base.h>
@@ -9,11 +8,10 @@
 using namespace winrt;
 using namespace Windows::Security::Credentials::UI;
 using namespace Windows::Foundation;
-using namespace Microsoft::ReactNative;
 
 namespace winrt::ReactNativeWindowsHello {
 
-void ReactNativeWindowsHello::Initialize(ReactContext const& reactContext) noexcept {
+void ReactNativeWindowsHello::Initialize(React::ReactContext const& reactContext) noexcept {
     m_context = reactContext;
 }
 
@@ -57,7 +55,7 @@ ReactNativeWindowsHelloCodegen::WindowsHelloSpec_verificationResult ToVerificati
     }
 }
 
-void ReactNativeWindowsHello::getDeviceStatus(ReactPromise<ReactNativeWindowsHelloCodegen::WindowsHelloSpec_availabilityStatus>&& result) noexcept {
+void ReactNativeWindowsHello::getDeviceStatus(React::ReactPromise<ReactNativeWindowsHelloCodegen::WindowsHelloSpec_availabilityStatus>&& result) noexcept {
     try {
         UserConsentVerifier::CheckAvailabilityAsync().Completed(
             [result = std::move(result)](IAsyncOperation<UserConsentVerifierAvailability> const& op, AsyncStatus const status) mutable {
@@ -73,7 +71,7 @@ void ReactNativeWindowsHello::getDeviceStatus(ReactPromise<ReactNativeWindowsHel
     }
 }
 
-void ReactNativeWindowsHello::requestConsentVerification(std::string promptMessage, ReactPromise<ReactNativeWindowsHelloCodegen::WindowsHelloSpec_verificationResult>&& result) noexcept {
+void ReactNativeWindowsHello::requestConsentVerification(std::string promptMessage, React::ReactPromise<ReactNativeWindowsHelloCodegen::WindowsHelloSpec_verificationResult>&& result) noexcept {
     try {
         hstring hPrompt = to_hstring(promptMessage);
         UserConsentVerifier::RequestVerificationAsync(hPrompt).Completed(

@@ -8,27 +8,29 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "windows": "npx @react-native-community/cli run-windows",
+    "windows": "npx @react-native-community/cli run-windows --release",
     "test:windows": "jest --config jest.config.windows.js"
   },
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.76",
-    "react-native-windows": "0.76.13",
-    "react-native-windows-hello": "^1.1.0"
+    "react-native-windows": "0.76",
+    "react-native-windows-hello": "link:../"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/stack": "^6.0.11",
+    "@rnx-kit/jest-preset": "^0.1.17",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
     "react-test-renderer": "17.0.2",
-    "@rnx-kit/jest-preset": "^0.1.17"
+    "@react-native/metro-config": "^0.76.9",
+    "@react-native/babel-preset": "^0.76.1"
   },
   "jest": {
     "preset": "react-native"
