@@ -25,14 +25,10 @@
       "example": {
         "type": "Project",
         "dependencies": {
-          "RNScreens": "[1.0.0, )",
           "ReactNativeWindowsHello": "[1.0.0, )"
         }
       },
       "reactnativewindowshello": {
-        "type": "Project"
-      },
-      "rnscreens": {
         "type": "Project"
       }
     },

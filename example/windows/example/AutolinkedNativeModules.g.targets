@@ -4,11 +4,7 @@
   <ItemGroup>
     <!-- Projects from react-native-windows-hello -->
     <ProjectReference Include="$(ProjectDir)..\..\node_modules\react-native-windows-hello\windows\ReactNativeWindowsHello\ReactNativeWindowsHello.vcxproj">
-      <Project>{82bf2b2c-eda5-47ca-a9f5-56ba622a15ea}</Project>
-    </ProjectReference>
-    <!-- Projects from react-native-screens -->
-    <ProjectReference Include="$(ProjectDir)..\..\node_modules\react-native-screens\windows\RNScreens\RNScreens.vcxproj">
-      <Project>{d638f49e-29d2-4699-ac52-facd82fa7138}</Project>
+      <Project>{82BF2B2C-EDA5-47CA-A9F5-56BA622A15EA}</Project>
     </ProjectReference>
   </ItemGroup>
 </Project>

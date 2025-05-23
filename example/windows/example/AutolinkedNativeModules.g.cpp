@@ -6,9 +6,6 @@
 // Includes from react-native-windows-hello
 #include <winrt/ReactNativeWindowsHello.h>
 
-// Includes from react-native-screens
-#include <winrt/RNScreens.h>
-
 namespace winrt::Microsoft::ReactNative
 {
 
@@ -16,8 +13,6 @@ void RegisterAutolinkedNativeModulePackages(winrt::Windows::Foundation::Collecti
 { 
     // IReactPackageProviders from react-native-windows-hello
     packageProviders.Append(winrt::ReactNativeWindowsHello::ReactPackageProvider());
-    // IReactPackageProviders from react-native-screens
-    packageProviders.Append(winrt::RNScreens::ReactPackageProvider());
 }
 
 }
