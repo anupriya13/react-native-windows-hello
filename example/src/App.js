@@ -1,5 +1,4 @@
 import React from 'react';
-import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -22,7 +21,7 @@ import BiometricsExample from './screens/Biometrics';
 
 const Stack = createStackNavigator();
 
-const HomeScreen: () => Node = ({navigation}) => {
+const HomeScreen = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -31,7 +30,6 @@ const HomeScreen: () => Node = ({navigation}) => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
@@ -64,7 +62,7 @@ const HomeScreen: () => Node = ({navigation}) => {
   );
 };
 
-const App: () => Node = () => {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
